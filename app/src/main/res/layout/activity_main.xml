@@ -8,9 +8,10 @@
 
     <ScrollView
         android:id="@+id/scrollView3"
-        android:layout_width="0dp"
-        android:layout_height="1213dp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="411dp"
+        android:layout_height="1143dp"
+        app:layout_constraintBottom_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -23,9 +24,9 @@
                 android:id="@+id/SingleRoomBtn"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
-                app:srcCompat="@drawable/single_room"
+                android:adjustViewBounds="true"
                 android:scaleType="fitCenter"
-                android:adjustViewBounds="true"/>
+                app:srcCompat="@drawable/single_room" />
 
             <ImageButton
                 android:id="@+id/DoubleRoomBtn"
@@ -66,7 +67,16 @@
                 android:adjustViewBounds="true"
                 android:scaleType="fitCenter"
                 app:srcCompat="@drawable/single_room" />
+
         </LinearLayout>
-    </ScrollView>
+
+        <com.google.android.material.navigation.NavigationView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            app:menu="@menu/nav_menu" />
+
+    </androidx.drawerlayout.widget.DrawerLayout>
+</ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
