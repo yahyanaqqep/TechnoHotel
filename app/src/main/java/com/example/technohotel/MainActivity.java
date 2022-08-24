@@ -5,29 +5,86 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 
 import androidx.drawerlayout.widget.DrawerLayout;
+
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.MenuItem;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageButton;
 
 import com.google.android.material.navigation.NavigationView;
 
 public class MainActivity extends AppCompatActivity {
 
     @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.nav_menu, menu);
+
+
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        return false;
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        DrawerLayout = findViewById(R.id.my_drawer_layout);
-        ActionBarDrawerToggle = new ActionBarDrawerToggle(this, DrawerLayout, R.string.nav_open, R.string.nav_close);
+        ImageButton singleBtn=findViewById(R.id.single_room);
+        ImageButton doubleBtn=findViewById(R.id.double_room);
+        ImageButton suiteBtn=findViewById(R.id.suite);
+        ImageButton deluxeBtn=findViewById(R.id.deluxe);
+        ImageButton viewBtn=findViewById(R.id.view_room);
+        ImageButton studioBtn=findViewById(R.id.studio);
+        singleBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent dataPage = new Intent(MainActivity.this, CustomerInfo.class);
+                startActivity(dataPage);
 
-        // pass the Open and Close toggle for the drawer layout listener
-        // to toggle the button
-        DrawerLayout.addDrawerListener(ActionBarDrawerToggle);
-        ActionBarDrawerToggle.syncState();
-
-        // to make the Navigation drawer icon always appear on the action bar
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            }
+        });
+        doubleBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent dataPage = new Intent(MainActivity.this, CustomerInfo.class);
+                startActivity(dataPage);
+            }
+        });
+        suiteBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent dataPage = new Intent(MainActivity.this, CustomerInfo.class);
+                startActivity(dataPage);
+            }
+        });
+        deluxeBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent dataPage = new Intent(MainActivity.this, CustomerInfo.class);
+                startActivity(dataPage);
+            }
+        });
+        viewBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent dataPage = new Intent(MainActivity.this, CustomerInfo.class);
+                startActivity(dataPage);
+            }
+        });
+        studioBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent dataPage = new Intent(MainActivity.this, CustomerInfo.class);
+                startActivity(dataPage);
+            }
+        });
 
     }
 }
